@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#reset-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 30px); /* 預設 10x10 格子 */
+    grid-template-rows: repeat(10, 30px);    /* 預設 10x10 格子 */
+    gap: 2px;
+    border: 1px solid #ccc;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border: 1px solid #bbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none; /* 防止選擇文字 */
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+.cell.revealed {
+    background-color: #eee;
+    cursor: default;
+}
+
+.cell.mine {
+    background-color: red;
+    color: white;
+}
+
+.cell.flagged::after {
+    content: '🚩'; /* 旗幟符號 */
+}
